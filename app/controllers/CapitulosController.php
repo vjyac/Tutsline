@@ -130,16 +130,16 @@ class CapitulosController extends BaseController {
 	{
 
 
-		$capitulo = capitulo::find($capitulos_id);
+		$capitulo = Capitulo::find($capitulos_id);
 
 		$rules = [
 				'capitulo' => 'required|unique:capitulos,capitulo,' . $capitulos_id,
 				'numero' => 'required|numeric',
 		];
 
-		if (! capitulo::isValid(Input::all(),$rules)) {
+		if (! Capitulo::isValid(Input::all(),$rules)) {
 
-			return Redirect::back()->withInput()->withErrors(capitulo::$errors);
+			return Redirect::back()->withInput()->withErrors(Capitulo::$errors);
 
 		}
 
@@ -167,7 +167,7 @@ class CapitulosController extends BaseController {
 	 */
 	public function destroy($cursos_id, $unidads_id, $capitulos_id)
 	{
-		$capitulo = capitulo::find($capitulos_id)->delete();
+		$capitulo = Capitulo::find($capitulos_id)->delete();
 
 		$title = "Capitulos";
 		$curso = Curso::find($cursos_id);
