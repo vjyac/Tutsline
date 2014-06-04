@@ -3,9 +3,9 @@
 class UserMailer extends Mailer {
 
 	/**
-	 * Outline all the events this class will be listening for. 
-	 * @param  [type] $events 
-	 * @return void         
+	 * Outline all the events this class will be listening for.
+	 * @param  [type] $events
+	 * @return void
 	 */
 	public function subscribe($events)
 	{
@@ -17,14 +17,14 @@ class UserMailer extends Mailer {
 
 	/**
 	 * Send a welcome email to a new user.
-	 * @param  string $email          
-	 * @param  int    $userId         
-	 * @param  string $activationCode 		
+	 * @param  string $email
+	 * @param  int    $userId
+	 * @param  string $activationCode
 	 * @return bool
 	 */
 	public function welcome($email, $userId, $activationCode)
 	{
-		$subject = 'Welcome to Laravel4 With Sentry';
+		$subject = 'Welcome to TutsLine.com';
 		$view = 'emails.auth.welcome';
 		$data['userId'] = $userId;
 		$data['activationCode'] = $activationCode;
@@ -35,14 +35,14 @@ class UserMailer extends Mailer {
 
 	/**
 	 * Email Password Reset info to a user.
-	 * @param  string $email          
-	 * @param  int    $userId         
-	 * @param  string $resetCode 		
+	 * @param  string $email
+	 * @param  int    $userId
+	 * @param  string $resetCode
 	 * @return bool
 	 */
 	public function forgotPassword($email, $userId, $resetCode)
 	{
-		$subject = 'Password Reset Confirmation | Laravel4 With Sentry';
+		$subject = 'Password Reset Confirmation | TutsLine';
 		$view = 'emails.auth.reset';
 		$data['userId'] = $userId;
 		$data['resetCode'] = $resetCode;
@@ -53,14 +53,14 @@ class UserMailer extends Mailer {
 
 	/**
 	 * Email New Password info to user.
-	 * @param  string $email          
-	 * @param  int    $userId         
-	 * @param  string $resetCode 		
+	 * @param  string $email
+	 * @param  int    $userId
+	 * @param  string $resetCode
 	 * @return bool
 	 */
 	public function newPassword($email, $newPassword)
 	{
-		$subject = 'New Password Information | Laravel4 With Sentry';
+		$subject = 'New Password Information | TutsLine';
 		$view = 'emails.auth.newpassword';
 		$data['newPassword'] = $newPassword;
 		$data['email'] = $email;
