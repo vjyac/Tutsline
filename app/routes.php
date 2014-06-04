@@ -122,15 +122,12 @@ Route::get( '/unidads/search', array(
 
 Route::resource('/cursos/{id}/unidads', 'UnidadsController');
 
-
-
 Route::get( '/capitulos/search', array(
 		'as' => 'capitulos.search',
 		'uses' => 'CapitulosController@search'
 ) );
 
 Route::resource('/cursos/{cursos_id}/unidads/{unidads_id}/capitulos', 'CapitulosController');
-
 
 Route::get( '/capitulospreguntas/search', array(
 		'as' => 'capitulospreguntas.search',
@@ -139,9 +136,39 @@ Route::get( '/capitulospreguntas/search', array(
 
 Route::resource('/cursos/{cursos_id}/unidads/{unidads_id}/capitulos/{capitulos_id}/capitulospreguntas', 'CapitulospreguntasController');
 
+Route::resource('/cursos/{cursos_id}/unidads/{unidads_id}/capitulos/{capitulos_id}/capitulosmultimedias', 'CapitulosmultimediasController');
+
+Route::resource('capitulosmultimedias', 'CapitulosmultimediasController');
+Route::get( '/capitulosmultimedias/{id}/delete', array( 'as' => 'capitulosmultimedias.delete', 'uses' => 'CapitulosmultimediasController@delete') );
+
 Route::get( '/capitulosrespuestas/search', array(
 		'as' => 'capitulosrespuestas.search',
 		'uses' => 'CapitulosrespuestasController@search'
 ) );
 
 Route::resource('/cursos/{cursos_id}/unidads/{unidads_id}/capitulos/{capitulos_id}/capitulospreguntas/{capitulospreguntas_id}/capitulosrespuestas', 'CapitulosrespuestasController');
+
+
+
+
+
+
+
+
+
+// delete image
+Route::post('delete-image', function () {
+
+
+    $destinationPath_big = public_path() . '/multimedias/capitulos/imagenes/big/';
+    $destinationPath_small = public_path() . '/multimedias/capitulos/imagenes/small/';
+
+    $filename = Input::get('file');
+
+    DB::table('capitulosmultimedias')->where('file', '=', $filename)->delete();
+
+    File::delete($destinationPath_big . $filename);
+    File::delete($destinationPath_small . $filename);
+
+     return Response::json('success', 200);
+});

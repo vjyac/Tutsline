@@ -11,7 +11,7 @@
 
 <div class="jumbotron">
   <div class="container">
-    <h1>{{trans('pages.helloworld')}}</h1>
+    <h1>{{trans('pages.title')}}</h1>
     <p>{{trans('pages.description')}}</p>
   </div>
 </div>
@@ -22,11 +22,11 @@
 			<h3 class="panel-title"><span class="glyphicon glyphicon-ok"></span> {{trans('pages.loginstatus')}}</h3>
 		</div>
 		<div class="panel-body">
-			<p><strong>{{trans('pages.sessiondata')}}:</strong></p>
-			<pre>{{ var_dump(Session::all()) }}</pre>
+			<!-- <p><strong>{{trans('pages.sessiondata')}}:</strong></p>
+			<pre>{{ var_dump(Session::all()) }}</pre> -->
 		</div>
 	</div>
-@endif 
- 
- 
+@endif
+
+
 @stop

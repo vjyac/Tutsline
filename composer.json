@@ -1,7 +1,10 @@
 {
 	"require": {
 		"laravel/framework": "4.1.*",
-		"cartalyst/sentry": "~2.1"
+		"cartalyst/sentry": "~2.1",
+		"tecnick.com/tcpdf": "dev-master",
+		"intervention/image": "1.*"
+
 	},
 	"require-dev": {
 		"way/generators": "~2.6",

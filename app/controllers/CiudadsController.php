@@ -42,10 +42,12 @@ class CiudadsController extends BaseController {
 	public function store()
 	{
 
+
 		$rules = [
 			'ciudad' => 'required|unique:ciudads',
 			'estado' => 'required|exists:estados,estado',
 		];
+
 
 
 		if (! Ciudad::isValid(Input::all(),$rules)) {

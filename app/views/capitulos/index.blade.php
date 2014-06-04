@@ -79,6 +79,12 @@
 															Capitulos Preguntas
 														</a>
 
+														<a href='/cursos/" . $curso->id . "/unidads/" . $unidad->id . "/capitulos/" . $capitulo->id . "/capitulosmultimedias' class='btn btn-blue btn-sm btn-icon icon-left'>
+															<i class='entypo-picture'></i>
+															Multimedias
+														</a>
+
+
 														";
 
 													print "</td>";

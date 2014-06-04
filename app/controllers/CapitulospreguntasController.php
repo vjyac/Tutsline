@@ -32,6 +32,9 @@ class CapitulospreguntasController extends BaseController {
 													array('title' => $title, 'capitulospreguntas' => $capitulospreguntas,
 													'curso' => $curso, 'unidad' => $unidad, 'capitulo' => $capitulo
 				));
+
+
+
 	}
 
 	/**

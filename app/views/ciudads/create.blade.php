@@ -30,30 +30,31 @@
 
 			<div class="panel-body">
 
-				{{ Form::open(array('route' => 'estados.store', "autocomplete"=>"off" , 'class' => 'form-horizontal form-groups-bordered', 'role' => 'form')) }}
+				{{ Form::open(array('route' => 'ciudads.store', "autocomplete"=>"off" , 'class' => 'form-horizontal form-groups-bordered', 'role' => 'form')) }}
 
-					<div class="form-group">
-						<label for="estado" class="col-sm-3 control-label">Estado</label>
-						<div class="col-sm-5">
 
-									{{ Form::text('estado', '', array('class' => 'form-control', 'name' => 'estado', 'id' => 'estado', 'placeholder' => 'Ingrese un estado')) }}
-									<br>
-									<?php if ($errors->first('estado')) { ?>
-											<span class="badge bg-danger">{{ $errors->first('estado') }}</span>
-									<?php } ?>
+						<div class="form-group">
+							<label for="ciudad" class="col-sm-3 control-label">Ciudad</label>
+							<div class="col-sm-5">
+										<input type="text" name="ciudad" id="pais" class="form-control" id="ciudad" name="ciudad" placeholder="Ingrese una ciudad" />
+										<br>
+										<?php if ($errors->first('ciudad')) { ?>
+												<span class="badge bg-danger">{{ $errors->first('ciudad') }}</span>
+										<?php } ?>
+							</div>
 						</div>
-					</div>
 
-					<div class="form-group">
-						<label for="pais" class="col-sm-3 control-label">Pais</label>
-						<div class="col-sm-5">
-									<input type="text" name="pais" id="pais" class="form-control typeahead" data-remote="/paiss/search?term=%QUERY" placeholder="Ingrese un pais" />
-									<br>
-									<?php if ($errors->first('pais')) { ?>
-											<span class="badge bg-danger">{{ $errors->first('pais') }}</span>
-									<?php } ?>
+
+						<div class="form-group">
+							<label for="estado" class="col-sm-3 control-label">Estado</label>
+							<div class="col-sm-5">
+										<input type="text" name="estado" id="estado" class="form-control typeahead" data-remote="/estados/search?term=%QUERY" placeholder="Ingrese un estado" />
+										<br>
+										<?php if ($errors->first('estado')) { ?>
+												<span class="badge bg-danger">{{ $errors->first('estado') }}</span>
+										<?php } ?>
+							</div>
 						</div>
-					</div>
 
 
 
